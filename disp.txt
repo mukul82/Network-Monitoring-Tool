@@ -1,0 +1,320 @@
+<?php
+$value1=$_POST['protocols'];
+$value2=$_POST['options'];
+if($value1=="arp")
+{
+ echo "<center><b>"."ARP" ."</center></b><br>";
+    if($value2=="timestamp")
+       {
+          $myfile=fopen("arp_time.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >Timestamp </th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+     if($value2=="smac")
+     {
+       $myfile=fopen("arp_smac.txt","r");
+       echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_MAC</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+     }  
+    if($value2=="dmac")
+     {
+       $myfile=fopen("arp_dmac.txt","r");
+        echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_MAC</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+     }  
+     if($value2=="sip")
+     {
+       $myfile=fopen("arp_sip.txt","r");
+       echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_IP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+     }  
+     if($value2=="dip")
+     {
+       $myfile=fopen("arp_dip.txt","r");
+       echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_IP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+     }  
+    if($value2=="length")
+     {
+        $myfile=fopen("arp_length.txt","r");
+       echo "<table width='2%' border='2'align='center' ><tr><th >PAYLOAD_LENGTH</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+     }
+     if($value2=="all")
+	{
+		 $myfile1=fopen("arp_all.txt","r");
+		echo "<table width='100%' border='2' ><tr><th align='left'  >Timestamp | Source_Address | Destination_Address | Source_IP |   
+                 Destination_IP | Length</th></tr><br>";     
+		while(!feof($myfile1))
+		{
+		
+                echo "<tr><td>" . fgets($myfile1) . "</td></tr>" ;
+		}
+                echo "</table>";
+		fclose($myfile1); 
+	}
+}
+
+if($value1=="udp")
+{
+   echo "<center><b>" . "UDP" . "</center></b><br>";
+    if($value2=="timestamp")
+       {
+          $myfile=fopen("udp_time.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >Timestamp </th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="smac")
+       {
+          $myfile=fopen("udp_smac.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_MAC</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+     if($value2=="dmac")
+       {
+          $myfile=fopen("udp_dmac.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_MAC</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+     if($value2=="sip")
+       {
+          $myfile=fopen("udp_sip.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_IP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+     if($value2=="dip")
+       {
+          $myfile=fopen("udp_dip.txt","r");
+           echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_IP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="sport")
+       {
+          $myfile=fopen("udp_sport.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_PORT</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+       if($value2=="dport")
+       {
+          $myfile=fopen("udp_dport.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_PORT</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="length")
+       {
+          $myfile=fopen("udp_length.txt","r");
+           echo "<table width='2%' border='2'align='center' ><tr><th >PAYLOAD_LENGTH</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+     if($value2=="all")
+	{
+		$myfile1=fopen("udp_all.txt","r");
+		echo "<table width='100%' border='2' ><tr><th align='left'   >Timestamp | Source_Address | Destination_Address | Source_IP |  
+                 Destination_IP | Length</th></tr><br>";     
+		while(!feof($myfile1))
+		{
+		
+                echo "<tr><td>" . fgets($myfile1) . "</td></tr>" ;
+		}
+                echo "</table>";
+		fclose($myfile1);   
+   	}  
+ }
+if($value1=="tcp")
+{
+ echo "<center><b>" . "TCP" . "</b></center><br>";
+    if($value2=="timestamp")
+       {
+          $myfile=fopen("tcp_time.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >TIMESTAMP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="smac")
+       {
+          $myfile=fopen("tcp_smac.txt","r");
+           echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_MAC</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="dmac")
+       {
+          $myfile=fopen("tcp_dmac.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_MAC</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="sip")
+       {
+          $myfile=fopen("tcp_sip.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_IP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="dip")
+       {
+          $myfile=fopen("tcp_dip.txt","r");
+          echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_IP</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="sport")
+       {
+          $myfile=fopen("tcp_sport.txt","r");
+           echo "<table width='2%' border='2'align='center' ><tr><th >SOURCE_PORT</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="dport")
+       {
+          $myfile=fopen("tcp_dport.txt","r");
+            echo "<table width='2%' border='2'align='center' ><tr><th >DESTINATION_PORT</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }
+      if($value2=="length")
+       {
+          $myfile=fopen("tcp_length.txt","r");
+           echo "<table width='2%' border='2'align='center' ><tr><th >PAYLOAD_LENGTH</th></tr><br>";     
+		while(!feof($myfile))
+		{
+		
+                echo "<tr><td>" . fgets($myfile) . "</td></tr>" ;
+		}
+                echo "</table>";
+       fclose($myfile);
+       }  
+     if($value2=="all")
+	{
+                $myfile1=fopen("tcp_all.txt","r");
+		echo "<table width='100%' border='2' ><tr><th align='left' >Timestamp | Source_Address | Destination_Address | Source_IP |   
+                 Destination_IP | Length</th></tr><br>";     
+		while(!feof($myfile1))
+		{
+		
+                echo "<tr><td>" . fgets($myfile1) . "</td></tr>" ;
+		}
+                echo "</table>";
+		fclose($myfile1);    
+        } 
+}
+?>

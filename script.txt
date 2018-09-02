@@ -1,0 +1,46 @@
+#! /bin/bash
+/usr/sbin/tcpdump -i eth0 -c 1000 -n -e > all_packets.txt
+
+grep -i "tcp" all_packets.txt > all_tcp.txt
+cut -d " " -f1 all_tcp.txt > tcp_time.txt
+cut -d " " -f2 all_tcp.txt > tcp_smac.txt
+cut -d " " -f4 all_tcp.txt > tcp_dmac1.txt
+cut -d "," -f1 tcp_dmac1.txt > tcp_dmac.txt
+cut -d " " -f10 all_tcp.txt > tcp_sip1.txt
+cut -d "." -f1,2,3,4 tcp_sip1.txt > tcp_sip.txt
+cut -d " " -f12 all_tcp.txt > tcp_dip1.txt
+cut -d "." -f1,2,3,4 tcp_dip1.txt > tcp_dip.txt
+cut -d "." -f5 tcp_sip1.txt > tcp_sport.txt
+cut -d "." -f5 tcp_dip1.txt > tcp_dport1.txt
+cut -d ":"  -f1 tcp_dport1.txt > tcp_dport.txt
+cut -d " " -f9 all_tcp.txt > tcp_length1.txt
+cut -d ":"  -f1 tcp_length1.txt > tcp_length.txt
+paste -d '|' tcp_time.txt   tcp_smac.txt  tcp_dmac.txt  tcp_sip.txt  tcp_dip.txt  tcp_sport.txt  tcp_dport.txt  tcp_length.txt > tcp_all.txt
+
+grep -i "udp" all_packets.txt > all_udp.txt
+cut -d " " -f1 all_udp.txt > udp_time.txt
+cut -d " " -f2 all_udp.txt > udp_smac.txt
+cut -d " " -f4 all_udp.txt > udp_dmac1.txt
+cut -d "," -f1 udp_dmac1.txt > udp_dmac.txt
+cut -d " " -f10 all_udp.txt > udp_sip1.txt
+cut -d "." -f1,2,3,4 udp_sip1.txt > udp_sip.txt
+cut -d " " -f12 all_udp.txt > udp_dip1.txt
+cut -d "." -f1,2,3,4 udp_dip1.txt > udp_dip.txt
+cut -d "." -f5 udp_sip1.txt > udp_sport.txt
+cut -d "." -f5 udp_dip1.txt > udp_dport1.txt
+cut -d ":" -f1 udp_dport1.txt > udp_dport.txt
+cut -d " " -f9 all_udp.txt > udp_length1.txt
+cut -d ":" -f1 udp_length1.txt > udp_length.txt
+paste  -d '|' udp_time.txt udp_smac.txt udp_dmac.txt udp_sip.txt udp_dip.txt udp_sport.txt udp_dport.txt udp_length.txt > udp_all.txt
+
+grep -i "arp" all_packets.txt > all_arp.txt
+cut -d " " -f1 all_arp.txt > arp_time.txt
+cut -d " " -f2 all_arp.txt > arp_smac.txt
+cut -d " " -f4 all_arp.txt > arp_dmac1.txt
+cut -d "," -f1 arp_dmac1.txt > arp_dmac.txt
+cut -d " " -f12 all_arp.txt > arp_sip.txt
+cut -d " " -f14 all_arp.txt > arp_dip1.txt
+cut -d ","  -f1 arp_dip1.txt > arp_dip.txt
+cut -d " " -f16 all_arp.txt > arp_length.txt
+paste -d '|'  arp_time.txt arp_smac.txt arp_dmac.txt arp_sip.txt arp_dip.txt arp_length.txt > arp_all.txt
+

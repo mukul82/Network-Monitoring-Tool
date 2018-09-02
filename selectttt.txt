@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+<title>SELECTION PAGE</title>
+</head>
+<body style="background-color:lightgrey;text-align:center;">
+<h1 style="text-align:center;">SELECTION PAGE</h1>
+<form action="display.php" method="post" style="text-align:center;">
+<fieldset>
+<input type="radio" name="protocols" value="tcp" checked>TCP<br>
+<input type="radio" name="protocols" value="udp">UDP<br>
+<input type="radio" name="protocols" value="arp">ARP<br><br>
+<select name="options" style="text-align:center;">
+   <option value="timestamp">TIMESTAMP</option>
+   <option value="smac">SOURCE_MAC</option>
+   <option value="dmac">DESTINATION_MAC</option>
+   <option value="sip">SOURCE_IP</option>
+   <option value="dip">DESTINATION_IP</option>
+   <option value="sport">SOURCE_PORT</option>
+   <option value="dport">DESTINATION_PORT</option>
+   <option value="length">PAYLOAD_LENGTH</option>
+   <option value="all">ALL</option> 
+   </select><br><br>
+   <input type="submit" value="SHOW RESULT">
+</fieldset>
+</form>
+</body>
+</html>

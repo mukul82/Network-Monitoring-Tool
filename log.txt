@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+<title>LOGIN PAGE</title>
+</head>
+<body style="background-color:lightgrey;text-align:center;">
+<h1 style="text-align:center;">NETWORK MONITORING TOOL</h1>
+<form action="/connect.php" method="post" style="text-align:center;">
+<fieldset><center>
+<legend>
+LOGIN PAGE:-
+</legend>
+<br>
+USERNAME:-
+<input type="text" name="username"><br><br>
+PASSWORD:-
+<input type="password" name="password"><br><br>
+<input type="submit" value="LOGIN"><br><br></center>
+</fieldset>
+</form>
+</body>
+</html>
+
